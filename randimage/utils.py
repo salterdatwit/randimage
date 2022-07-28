@@ -32,8 +32,8 @@ def show_img_list(img_list, shape, cmap='gray', figsize=None):
     fig.show()
     return fig
 
-def get_random_image(img_size):
+def get_random_image(img_size, cmap):
     mask = random.choice(MASKS)(img_size).get_mask()
     path = random.choice(PATHS)(mask).get_path()
-    img = ColoredPath(path, img_size).get_colored_path()
+    img = ColoredPath(path, img_size).get_colored_path(cmap)
     return img
